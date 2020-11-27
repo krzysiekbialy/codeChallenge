@@ -51,7 +51,7 @@ const Title = styled.div`
 `;
 
 const Paragraph = styled.p`
-flex: 1;
+  flex: 1;
   padding-left: 16px;
   padding-right: 16px;
 `;
@@ -61,8 +61,8 @@ const Stats = styled.div`
   width: 100%;
   padding-bottom: 16px;
   padding-right: 16px;
-  justify-content: end;
   align-items: center;
+  justify-content: flex-end;
   p {
     color: #cfb995;
     font-size: 14px;

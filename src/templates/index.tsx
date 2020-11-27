@@ -4,6 +4,7 @@ import { GlobalStyles } from "../styles/shared";
 // @ts-ignore
 import Header from "../components/Header";
 import Features from "../components/Features";
+import Footer from "../components/Footer";
 
 const About: React.FC = () => {
   return (
@@ -11,6 +12,7 @@ const About: React.FC = () => {
       <Global styles={GlobalStyles} />
       <Header />
       <Features />
+      <Footer />
     </>
   );
 };

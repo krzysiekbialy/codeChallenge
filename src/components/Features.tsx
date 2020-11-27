@@ -4,36 +4,65 @@ import { css } from "@emotion/core";
 import * as _ from "lodash";
 import JokeType from "./JokeType";
 import JokeCard from "./JokeCard";
+import { jokeTypeData, jokeText } from "./SimpleData";
+
+const arrow = require("../assets/arrow.svg");
 
 const FeaturesWrapper = styled.section`
-  height: 1586px;
+  height: 1012px;
   background-color: white;
   padding-left: 165px;
   padding-right: 165px;
 `;
 
+const Arrow = styled.div`
+  margin-right: 16px;
+  width: 16px;
+  height: 11px;
+  background-image: url(${arrow});
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotate(90deg);
+`;
+
 const Joke = styled.div`
   background-color: white;
+  margin-left: -10px;
+  margin-right: -10px;
   height: 214px;
-  border-bottom: 2px solid #ecebe9;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  /* align-items: center; */
+  padding-top: 61px;
+  padding-bottom: 41px;
+  margin: 0 -20px;
+  justify-content: flex-start;
+`;
+
+const Span = styled.span`
+  display: flex;
+  height: 2px;
+  width: 100%;
+  margin-top: 10px;
+  background-color: #ecebe9;
 `;
 
 const AllJokes = styled.div`
+  display: flex;
   width: 206px;
   height: 48px;
   margin-left: 20px;
   padding: 14px 0;
   border-radius: 2px;
   border: 2px solid #d1bb91;
-  p {
-    color: #d1bb91;
-    text-align: center;
-    text-transform: uppercase;
-  }
+`;
+
+const JokesTitle = styled.p`
+  flex: 1;
+  text-align: center;
+  color: #d1bb91;
+  text-transform: uppercase;
 `;
 
 const Special = styled.div`
@@ -53,77 +82,19 @@ const Special = styled.div`
   }
 `;
 
-const JokeHolder = styled.div`
-margin-top: 16px;
-display: flex;
-flex-wrap: wrap;
+const JokeHolderDiv = styled.div`
+  justify-content: flex-start;
+  margin: 0px -10px 0px -5px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 16px;
+`;
 
-`
-
-const jokeTypeData = [
-  {
-    text: "Adult Jokes",
-    color: "#ff5b5b",
-  },
-  {
-    text: "Dad Jokes",
-    color: "#ff915b",
-  },
-  {
-    text: "Christmas Jokes",
-    color: "#ffbe5b",
-  },
-  {
-    text: "Job Jokes",
-    color: "#ffdf5b",
-  },
-  {
-    text: "Birthday Jokes",
-    color: "#8fe360",
-  },
-  {
-    text: "Special Jokes",
-    color: "#57e690",
-  },
-  {
-    text: "Puns",
-    color: "#57dbe6",
-  },
-];
-
-const jokeText = [
-  {
-    title: "Lawyer Joke",
-    paragraph: `A lawyer dies and goes to Heaven. "There must be some mistake," the lawyer argues. "I'm too young to die. I'm only 55." "Fifty-five?" says Saint Peter. "No, according to out calculations, you're 82." "How'd you get that?" the lawyer asks. Answers St. Peter, "We added up your time sheets."`,
-  },
-  {
-    title: "Doctor Joke",
-    paragraph: `I’d never had surgery, and I was nervous. “This is a very simple, noninvasive procedure,” the anesthesiologist reassured me. I felt better, until … “Heck,” he continued, “you have 
-    a better chance of dying from the 
-    anesthesia than the surgery itself.”`,
-  },
-  {
-    title: "Business Joke",
-    paragraph: `I went to my boss at work and said, "I need a raise. Three other companies are after me."
-    He said, "Really? Which other companies are after you?"
-    I said, "The electric company, the gas company and the phone company.`,
-  },
-  {
-    title: "Police Jokes",
-    paragraph: `An officer conducting speed enforcement stops a young man for traveling in excess of 40 mph over the speed limit. The officer approaches the driver and says, "Well, 40 over...I been waiting for you to come along all day."
-    Without pause, the young man replies, "I got here as fast as I could!"`,
-  },
-  {
-    title: "Doctor joke",
-    paragraph: `An officer observes a woman standing in the middle of the street. He approaches her and asks, "Are you okay?"
-    The woman replies, "Yes, but how do I get to the hospital?"
-    The officer replies, "Just keep standing there."`,
-  },
-  {
-    title: "Boss Joke",
-    paragraph: `My boss asked me to put a joke on the first slide of the presentation…apparently a picture of my pay slip wasn’t what he was looking for.`,
-  },
-];
+const ViewMore = styled.div`
+  margin-top: 64px;
+  display: flex;
+  justify-content: center;
+`;
 
 export interface FeaturesProps {}
 
@@ -132,24 +103,30 @@ const Features: React.FC<FeaturesProps> = () => {
     <FeaturesWrapper>
       <Joke>
         {jokeTypeData.map((v, i) => {
-          return <JokeType key={i} color={v.color} text={v.text} />;
+          return (
+            <JokeType key={i} color={v.color} text={v.text} yellow={v.yellow} />
+          );
         })}
-
         <AllJokes>
-          <p>VIEW ALL</p>
+          <JokesTitle>VIEW ALL</JokesTitle>
+          <Arrow />
         </AllJokes>
       </Joke>
+      <Span />
       <Special>
         <p>special jokes</p>
       </Special>
-      <JokeHolder>
-      {jokeText.map((v, i) => {
-        return <JokeCard key={i} title={v.title} paragraph={v.paragraph} />;
-      })}
-
-      </JokeHolder>
-
-
+      <JokeHolderDiv>
+        {jokeText.map((v, i) => {
+          return <JokeCard key={i} title={v.title} paragraph={v.paragraph} />;
+        })}
+      </JokeHolderDiv>
+      <ViewMore>
+        <AllJokes>
+          <JokesTitle>VIEW MORE</JokesTitle>
+          <Arrow />
+        </AllJokes>
+      </ViewMore>
     </FeaturesWrapper>
   );
 };
