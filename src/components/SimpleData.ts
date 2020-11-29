@@ -64,4 +64,35 @@ const jokeText = [
   },
 ];
 
-export { jokeTypeData, jokeText };
+
+const topJokes = [
+  {
+    text: "Smoking Joke",
+  },
+  {
+    text: "My Boss Joke",
+  },
+  {
+    text: "Dirty Millionaire Joke",
+  }, 
+  {
+    text: "The annoying neighbour",
+  },
+  {
+    text: "Knock Knock",
+  },
+  {
+    text: "Why Tyson lisps",
+  },
+  {
+    text: "The drunk Police officer",
+  },
+  {
+    text: "My hip dad (Dad joke)",
+  },
+  {
+    text: "What not to say in an elevator",
+  },
+];
+
+export { jokeTypeData, jokeText, topJokes };
