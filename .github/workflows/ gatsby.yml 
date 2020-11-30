@@ -2,7 +2,7 @@ name: Gatsby Publish Site Action
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:

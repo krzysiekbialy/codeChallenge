@@ -11,6 +11,7 @@ const img = require("../assets/background.png");
 const LogoV = require("../assets/vehiculum-logo.svg");
 
 import { colors } from "../styles/colors";
+import Search from "./Search";
 
 const SideMenu = styled.div`
   right: -500px;
@@ -102,11 +103,7 @@ const Wrapper = styled.div`
   width: 100vw;
   left: 0;
   top: 0;
-  height: 350px;
-  @media (max-width: 1200px) {
-    flex-direction: column;
-    height: max-content;
-  }
+  padding-bottom: 67px;
 `;
 
 const Nav = styled.div`
@@ -269,9 +266,7 @@ const Header: React.FC<SiteNavProps> = ({ headerProps }) => {
             <p>Daily Laughs for you and yours</p>
           </TitleP>
         </TitleHolder>
-        <SearchInput
-          placeholder={"How can we make you laugh today?"}
-        ></SearchInput>
+        <Search />
       </Holder>
     </Wrapper>
   );
