@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { css } from "@emotion/core";
 import * as _ from "lodash";
 import JokeType from "./JokeType";
 import JokeCard from "./JokeCard";
@@ -9,10 +8,11 @@ import { jokeTypeData, jokeText } from "./SimpleData";
 const arrow = require("../assets/arrow.svg");
 
 const FeaturesWrapper = styled.section`
-  height: 1012px;
+  /* height: 1012px; */
   background-color: white;
   padding-left: 165px;
   padding-right: 165px;
+  padding-bottom: 32px;
 `;
 
 const Arrow = styled.div`
