@@ -4,13 +4,10 @@ import styled from "@emotion/styled";
 // import { css } from "@emotion/core";
 // @ts-ignore
 import FacebookIcon from "../assets/FacebookIcon";
-import { maxwidth } from "../styles/shared";
 import { Link } from "react-scroll";
 
 const img = require("../assets/background.png");
 const LogoV = require("../assets/vehiculum-logo.svg");
-
-import { colors } from "../styles/colors";
 import Search from "./Search";
 
 const SideMenu = styled.div`
@@ -169,6 +166,9 @@ const Logo = styled.div`
   @media (max-width: 1000px) {
     background-size: contain;
   }
+  @media (max-width: 690px) {
+    margin-left: 15px;
+  }
 `;
 
 const MenuOptionHolder = styled.div`
@@ -246,7 +246,7 @@ const Header: React.FC<SiteNavProps> = ({ headerProps }) => {
         ) : null}
       </Nav>
 
-      <Holder css={maxwidth}>
+      <Holder>
         <TitleHolder>
           <TitleH1>
             <h1>The Joke Bible</h1>

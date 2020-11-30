@@ -12,6 +12,9 @@ const JokeHolder = styled.div`
   border-radius: 2px;
   margin-bottom: 16px;
   cursor: pointer;
+  @media (max-width: 690px) {
+    margin-left: 0;
+  }
 `;
 
 const Title = styled.p`

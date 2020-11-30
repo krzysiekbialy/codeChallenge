@@ -18,6 +18,10 @@ const Wrapper = styled.div`
   padding-left: 181px;
   justify-content: center;
   align-items: flex-start;
+  @media (max-width: 690px) {
+    padding-left: 0px;
+    align-items: center;
+  }
 `;
 const Arrow = styled.div`
   margin-left: 8px;

@@ -17,6 +17,10 @@ const FeaturesWrapper = styled.section`
   padding-left: 165px;
   padding-right: 165px;
   padding-bottom: 32px;
+  @media (max-width: 690px) {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 `;
 
 const Arrow = styled.div`
@@ -42,6 +46,10 @@ const Joke = styled.div`
   @media (max-width: 1420px) {
     justify-content: center;
   }
+  @media (max-width: 690px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const Span = styled.span`
@@ -61,6 +69,9 @@ const AllJokes = styled.div`
   border-radius: 2px;
   border: 2px solid #d1bb91;
   cursor: pointer;
+  @media (max-width: 690px) {
+    margin-left: 0;
+  }
 `;
 
 const JokesTitle = styled.p`
@@ -124,8 +135,6 @@ const Details = styled.div`
 const JokeContent = styled.div`
   display: flex;
 `;
-
-
 
 export interface FeaturesProps {}
 
