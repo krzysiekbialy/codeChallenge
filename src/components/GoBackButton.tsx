@@ -25,7 +25,7 @@ const Icon = styled.div`
 
 interface GoBackProps {}
 
-const GoBack: React.FC<GoBackProps> = (props) => {
+const GoBackButton: React.FC<GoBackProps> = (props) => {
   return (
     <GoBackHolder>
       <Icon></Icon>
@@ -33,4 +33,4 @@ const GoBack: React.FC<GoBackProps> = (props) => {
   );
 };
 
-export default GoBack;
+export default GoBackButton;

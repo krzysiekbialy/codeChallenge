@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "@emotion/styled";
 import * as _ from "lodash";
 import JokeType from "./JokeType";
 import JokeCard from "./JokeCard";
 import { jokeTypeData, jokeText } from "./SimpleData";
+import { topJokes } from "./SimpleData";
+import JokeCardDetails from "./JokeCardDetails";
+import GoBackButton from "./GoBackButton";
+import TopTenJokes from "./TopTenJokes";
 
 const arrow = require("../assets/arrow.svg");
 
@@ -101,37 +105,73 @@ const ViewMore = styled.div`
   justify-content: center;
 `;
 
+let data = topJokes;
+
+const filter = (v: string) => {
+  const filterJokes = topJokes.filter((el) => {
+    return el.text.includes(v);
+  });
+  data = filterJokes;
+};
+
 export interface FeaturesProps {}
 
 const Features: React.FC<FeaturesProps> = () => {
+  const [currentJoke, setCurrentJoke] = useState("");
+  // const [currentFilter, setCurrentFilter] = useState();
+
   return (
     <FeaturesWrapper>
-      <Joke>
-        {jokeTypeData.map((v, i) => {
-          return (
-            <JokeType key={i} color={v.color} text={v.text} yellow={v.yellow} />
-          );
-        })}
-        <AllJokes>
-          <JokesTitle>VIEW ALL</JokesTitle>
-          <Arrow />
-        </AllJokes>
-      </Joke>
-      <Span />
-      <Special>
-        <p>special jokes</p>
-      </Special>
-      <JokeHolderDiv>
-        {jokeText.map((v, i) => {
-          return <JokeCard key={i} title={v.title} paragraph={v.paragraph} />;
-        })}
-      </JokeHolderDiv>
-      <ViewMore>
-        <AllJokes>
-          <JokesTitle>VIEW MORE</JokesTitle>
-          <Arrow />
-        </AllJokes>
-      </ViewMore>
+      {currentJoke ? (
+        <>
+          <GoBackButton />
+          <JokeCardDetails title={currentJoke} />
+          <TopTenJokes />
+        </>
+      ) : (
+        <>
+          <Joke>
+            {jokeTypeData.map((v, i) => {
+              return (
+                <JokeType
+                  key={i}
+                  color={v.color}
+                  text={v.text}
+                  yellow={v.yellow}
+                />
+              );
+            })}
+            <AllJokes>
+              <JokesTitle>VIEW ALL</JokesTitle>
+              <Arrow />
+            </AllJokes>
+          </Joke>
+          <Span />
+          <Special>
+            <p>special jokes</p>
+          </Special>
+          <JokeHolderDiv>
+            {jokeText.map((v, i) => {
+              return (
+                <JokeCard
+                  key={i}
+                  title={v.title}
+                  paragraph={v.paragraph}
+                  onShow={() => {
+                    setCurrentJoke(v.title);
+                  }}
+                />
+              );
+            })}
+          </JokeHolderDiv>
+          <ViewMore>
+            <AllJokes>
+              <JokesTitle>VIEW MORE</JokesTitle>
+              <Arrow />
+            </AllJokes>
+          </ViewMore>
+        </>
+      )}
     </FeaturesWrapper>
   );
 };

@@ -1,5 +1,6 @@
 import * as React from "react";
 import styled from "@emotion/styled";
+import { jokeText } from "./SimpleData";
 
 const JokeCardMain = styled.div`
   padding-top: 17px;
@@ -102,12 +103,18 @@ const Dot = styled.span`
 
 interface JokeCardDetailsProps {
   title?: string;
-  paragraph1?: string;
-  paragraph2?: string;
-  paragraph3?: string;
+  // paragraph1?: string;
+  // paragraph2?: string;
+  // paragraph3?: string;
 }
 
+// const found = jokesText.find(element.tittle => element.tittle == props.titte);
+
+// console.log(found);
+
 const JokeCardDetails: React.FC<JokeCardDetailsProps> = (props) => {
+  const found = jokeText.find((element) => element.title == props.children);
+
   return (
     <JokeCardMain>
       <TopHolder>
@@ -128,11 +135,7 @@ const JokeCardDetails: React.FC<JokeCardDetailsProps> = (props) => {
         <Number>NO #1</Number>
       </TitleHolder>
 
-      <Paragraph>
-        <p>{props.paragraph1}</p>
-        <p>{props.paragraph2}</p>
-        <p>{props.paragraph3}</p>
-      </Paragraph>
+      <Paragraph>{found}</Paragraph>
     </JokeCardMain>
   );
 };

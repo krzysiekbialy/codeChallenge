@@ -198,22 +198,3 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
     });
   }
 };
-
-// const jokeText = path.resolve("src/component/SimpleData.ts");
-
-// exports.createPages = async ({ graphql, actions, reporter }) => {
-//   const { createPage } = actions;
-// const jokesTemplate = path.resolve("src/templates/jokesTemplate.js");
-// const result = jokeText;
-// console.log(jokeText);
-
-// result.data.promoction.promocjs.forEach((promocje) => {
-//   createPage({
-//     path: promocje.podstrona,
-//     component: promoctionTemplates,
-//     context: {
-//       data: promocje,
-//     },
-//   });
-// });
-// };

@@ -9,7 +9,7 @@ const TopTenMain = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 4px;
-  border: solid 1px  #ecebe9;
+  border: solid 1px #ecebe9;
 `;
 
 const Title = styled.div`
@@ -39,7 +39,7 @@ interface TopTenProps {
   paragraph3?: string;
 }
 
-const TopTen: React.FC<TopTenProps> = (props) => {
+const TopTenJokes: React.FC<TopTenProps> = (props) => {
   return (
     <TopTenMain>
       <Title>
@@ -54,4 +54,4 @@ const TopTen: React.FC<TopTenProps> = (props) => {
   );
 };
 
-export default TopTen;
+export default TopTenJokes;

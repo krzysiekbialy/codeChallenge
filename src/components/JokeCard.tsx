@@ -74,6 +74,7 @@ const Stats = styled.div`
 interface JokeCardProps {
   title: string;
   paragraph: string;
+  onShow: () => void;
 }
 
 const JokeCard: React.FC<JokeCardProps> = (props) => {
@@ -85,7 +86,7 @@ const JokeCard: React.FC<JokeCardProps> = (props) => {
       </Title>
       <Paragraph>{props.paragraph}</Paragraph>
       <Stats>
-        <p>see stats</p>
+        <p onClick={props.onShow}>see stats</p>
         <Arrow />
       </Stats>
     </JokeCardMain>
