@@ -4,7 +4,6 @@ import { GlobalStyles } from "../styles/shared";
 import Header from "../components/Header";
 import Features from "../components/Features";
 import Footer from "../components/Footer";
-import Search from "../components/Search";
 const About: React.FC = () => {
   return (
     <>
