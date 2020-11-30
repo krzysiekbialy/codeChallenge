@@ -117,15 +117,23 @@ const filter = (v: string) => {
 export interface FeaturesProps {}
 
 const Features: React.FC<FeaturesProps> = () => {
-  const [currentJoke, setCurrentJoke] = useState("");
-  // const [currentFilter, setCurrentFilter] = useState();
-
+  const [currentJoke, setCurrentJoke] = useState({
+    title: "",
+    paragraph: "",
+  });
   return (
     <FeaturesWrapper>
-      {currentJoke ? (
+      {currentJoke.title ? (
         <>
-          <GoBackButton />
-          <JokeCardDetails title={currentJoke} />
+          <GoBackButton
+            onClick={() => {
+              setCurrentJoke({ title: "", paragraph: "" });
+            }}
+          />
+          <JokeCardDetails
+            title={currentJoke.title}
+            paragraph={currentJoke.paragraph}
+          />
           <TopTenJokes />
         </>
       ) : (
@@ -158,7 +166,7 @@ const Features: React.FC<FeaturesProps> = () => {
                   title={v.title}
                   paragraph={v.paragraph}
                   onShow={() => {
-                    setCurrentJoke(v.title);
+                    setCurrentJoke(v);
                   }}
                 />
               );

@@ -10,8 +10,8 @@ const GoBackHolder = styled.div`
   width: 64px;
   height: 64px;
   background-color: #303030;
-  /* border-radius: 77% 23% 23% 77% / 50% 50% 50% 50%; */
   border-radius: 22% 78% 73% 27% / 24% 30% 70% 76%;
+  cursor: pointer;
 `;
 
 const Icon = styled.div`
@@ -23,11 +23,13 @@ const Icon = styled.div`
   margin-left: 7px;
 `;
 
-interface GoBackProps {}
+interface GoBackProps {
+  onClick: () => void;
+}
 
 const GoBackButton: React.FC<GoBackProps> = (props) => {
   return (
-    <GoBackHolder>
+    <GoBackHolder onClick={props.onClick}>
       <Icon></Icon>
     </GoBackHolder>
   );
