@@ -4,15 +4,15 @@ import * as _ from "lodash";
 import JokeType from "./JokeType";
 import JokeCard from "./JokeCard";
 import { jokeTypeData, jokeText } from "./SimpleData";
-import { topJokes } from "./SimpleData";
+// import { topJokes } from "./SimpleData";
 import JokeCardDetails from "./JokeCardDetails";
 import GoBackButton from "./GoBackButton";
 import TopTenJokes from "./TopTenJokes";
+import { css } from "@emotion/core";
 
 const arrow = require("../assets/arrow.svg");
 
 const FeaturesWrapper = styled.section`
-  /* height: 1012px; */
   background-color: white;
   padding-left: 165px;
   padding-right: 165px;
@@ -35,7 +35,6 @@ const Joke = styled.div`
   margin-right: -10px;
   display: flex;
   flex-wrap: wrap;
-  /* align-items: center; */
   padding-top: 61px;
   padding-bottom: 41px;
   margin: 0 -20px;
@@ -105,14 +104,28 @@ const ViewMore = styled.div`
   justify-content: center;
 `;
 
-let data = topJokes;
+const Details = styled.div`
+  display: flex;
+  flex-direction: column;
+  /* min-height: calc(100vh - 598px); */
+  padding-top: 46px;
+  padding-bottom: 73px;
+`;
 
-const filter = (v: string) => {
-  const filterJokes = topJokes.filter((el) => {
-    return el.text.includes(v);
-  });
-  data = filterJokes;
-};
+// let data = topJokes;
+
+// const filter = (v: string) => {
+//   const filterJokes = topJokes.filter((el) => {
+//     return el.text.includes(v);
+//   });
+//   data = filterJokes;
+// };
+
+const JokeContent = styled.div`
+  display: flex;
+`;
+
+
 
 export interface FeaturesProps {}
 
@@ -121,21 +134,25 @@ const Features: React.FC<FeaturesProps> = () => {
     title: "",
     paragraph: "",
   });
+  const [showJoke, setShowJoke] = useState(false);
+
   return (
     <FeaturesWrapper>
-      {currentJoke.title ? (
-        <>
+      {showJoke ? (
+        <Details>
           <GoBackButton
             onClick={() => {
-              setCurrentJoke({ title: "", paragraph: "" });
+              setShowJoke(false);
             }}
           />
-          <JokeCardDetails
-            title={currentJoke.title}
-            paragraph={currentJoke.paragraph}
-          />
-          <TopTenJokes />
-        </>
+          <JokeContent>
+            <JokeCardDetails
+              title={currentJoke.title}
+              paragraph={currentJoke.paragraph}
+            />
+            <TopTenJokes />
+          </JokeContent>
+        </Details>
       ) : (
         <>
           <Joke>
@@ -167,6 +184,7 @@ const Features: React.FC<FeaturesProps> = () => {
                   paragraph={v.paragraph}
                   onShow={() => {
                     setCurrentJoke(v);
+                    setShowJoke(true);
                   }}
                 />
               );

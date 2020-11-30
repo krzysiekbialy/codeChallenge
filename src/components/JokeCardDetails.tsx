@@ -12,6 +12,7 @@ const JokeCardMain = styled.div`
   height: 287px;
   border-radius: 4px;
   border: solid 1px #ecebe9;
+  margin-right: 30px;
 `;
 
 const TitleHolder = styled.div`
