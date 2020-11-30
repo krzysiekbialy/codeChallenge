@@ -18,7 +18,6 @@ const FeaturesWrapper = styled.section`
 const Arrow = styled.div`
   margin-right: 16px;
   width: 16px;
-  height: 11px;
   background-image: url(${arrow});
   background-position: center;
   background-size: contain;
@@ -30,7 +29,6 @@ const Joke = styled.div`
   background-color: white;
   margin-left: -10px;
   margin-right: -10px;
-  height: 214px;
   display: flex;
   flex-wrap: wrap;
   /* align-items: center; */
@@ -38,6 +36,9 @@ const Joke = styled.div`
   padding-bottom: 41px;
   margin: 0 -20px;
   justify-content: flex-start;
+  @media (max-width: 1420px) {
+    justify-content: center;
+  }
 `;
 
 const Span = styled.span`
@@ -56,6 +57,7 @@ const AllJokes = styled.div`
   padding: 14px 0;
   border-radius: 2px;
   border: 2px solid #d1bb91;
+  cursor: pointer;
 `;
 
 const JokesTitle = styled.p`
@@ -88,6 +90,9 @@ const JokeHolderDiv = styled.div`
   display: flex;
   flex-wrap: wrap;
   padding-top: 16px;
+  @media (max-width: 1439px) {
+    justify-content: center;
+  }
 `;
 
 const ViewMore = styled.div`

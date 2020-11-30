@@ -20,9 +20,8 @@ const SideMenu = styled.div`
   flex-direction: column;
   position: fixed;
   opacity: 0;
-  -webkit-backface-visibility: hidden;
   border-radius: 20px;
-  border: 1px solid #18b3ff;
+  border: 1px solid #cfb995;
   background-color: white;
   transition-property: right;
   transition-duration: 0.8s;
@@ -47,9 +46,9 @@ const Icon = styled.div`
   padding: 12px;
   width: 50px;
   p {
-    color: #2e476e;
+    color: #303030;
     &:hover {
-      color: #83ebf1;
+      color: #cfb995;
     }
   }
 
@@ -78,8 +77,8 @@ const Icon = styled.div`
 const HambMenu = styled.svg`
   position: fixed;
   right: 15px;
-  top: 15px;
-  fill: ${colors.navyBlueDark};
+  top: 0px;
+  fill: white;
   height: 50px;
   width: 50px;
   z-index: 5;
@@ -130,7 +129,6 @@ const Holder = styled.div`
 
 const TitleHolder = styled.div`
   margin-top: 60px;
-  max-width: 350px;
   z-index: 2;
   @media (max-width: 992px) {
     padding: 0px 30px;
@@ -146,15 +144,6 @@ const TitleH1 = styled.div`
     line-height: 50px;
     color: #cfb995;
   }
-`;
-
-const SearchInput = styled.input`
-  margin-top: 45px;
-  height: 48px;
-  width: 458px;
-  border-radius: 4px;
-  border: 2px solid white;
-  background-color: transparent;
 `;
 
 const TitleP = styled.div`

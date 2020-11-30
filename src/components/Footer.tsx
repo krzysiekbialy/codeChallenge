@@ -45,6 +45,7 @@ const Submit = styled.div`
   width: 150px;
   align-items: center;
   margin-top: 13px;
+  cursor: pointer;
 `;
 
 const SubmitP = styled.p`

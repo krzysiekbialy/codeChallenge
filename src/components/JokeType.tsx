@@ -11,6 +11,7 @@ const JokeHolder = styled.div`
   padding: 14px 0;
   border-radius: 2px;
   margin-bottom: 16px;
+  cursor: pointer;
 `;
 
 const Title = styled.p`

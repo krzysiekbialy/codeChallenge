@@ -2,6 +2,7 @@ import * as React from "react";
 import usePortal from "react-useportal";
 import styled from "@emotion/styled";
 import { topJokes } from "./SimpleData";
+import { Link } from "gatsby";
 
 const search = require("../assets/search.svg");
 const bolt = require("../assets/bolt.svg");
@@ -13,6 +14,7 @@ const Holder = styled.div`
 
 const SearchInput = styled.input`
   margin-top: 45px;
+  type: text;
   height: 48px;
   width: 458px;
   border-radius: 4px;
@@ -47,6 +49,7 @@ const Icon = styled.div`
   width: 22px;
   padding-left: 16px;
   transform: translateX(420px) translateY(55px);
+  cursor: pointer;
 `;
 
 const AnswerContent = styled.div`
@@ -54,6 +57,13 @@ const AnswerContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  z-index: 100;
+  p {
+    cursor: pointer;
+    &:hover {
+      color: #cfb995;
+    }
+  }
 `;
 
 const Bolt = styled.div`
@@ -73,18 +83,31 @@ const Span = styled.span`
 
 interface SearchProps {}
 
+let data = topJokes;
+
+const filter = (v: string) => {
+  const filterJokes = topJokes.filter((el) => {
+    return el.text.includes(v);
+  });
+  data = filterJokes;
+};
+
 const Search: React.FC<SearchProps> = (props) => {
   const [openPortal, closePortal, isOpen, Portal] = usePortal();
+
   return (
     <Holder>
       <SearchInput
         placeholder={"How can we make you laugh today?"}
+        onChange={(e) => {
+          filter(e.target.value);
+        }}
       ></SearchInput>
       <Icon onClick={openPortal} />
 
       {isOpen && (
         <SearchAnswer>
-          {topJokes.map((v, i) => {
+          {data.map((v, i) => {
             return (
               <>
                 <AnswerContent>

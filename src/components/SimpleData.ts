@@ -64,7 +64,6 @@ const jokeText = [
   },
 ];
 
-
 const topJokes = [
   {
     text: "Smoking Joke",
@@ -74,7 +73,7 @@ const topJokes = [
   },
   {
     text: "Dirty Millionaire Joke",
-  }, 
+  },
   {
     text: "The annoying neighbour",
   },

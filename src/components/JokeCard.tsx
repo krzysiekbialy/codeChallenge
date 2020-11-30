@@ -67,6 +67,7 @@ const Stats = styled.div`
     color: #cfb995;
     font-size: 14px;
     text-transform: uppercase;
+    cursor: pointer;
   }
 `;
 
