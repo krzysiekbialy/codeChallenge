@@ -8,6 +8,7 @@ import { jokeTypeData, jokeText } from "./SimpleData";
 import JokeCardDetails from "./JokeCardDetails";
 import GoBackButton from "./GoBackButton";
 import TopTenJokes from "./TopTenJokes";
+import Header from "./Header";
 import { css } from "@emotion/core";
 
 const arrow = require("../assets/arrow.svg");
@@ -17,6 +18,7 @@ const FeaturesWrapper = styled.section`
   padding-left: 165px;
   padding-right: 165px;
   padding-bottom: 32px;
+
   @media (max-width: 690px) {
     padding-left: 0px;
     padding-right: 0px;
@@ -134,24 +136,45 @@ const Details = styled.div`
 
 const JokeContent = styled.div`
   display: flex;
+  justify-content: center;
+  @media (max-width: 1170px) {
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
+const TopTen = css`
+  @media (max-width: 1170px) {
+    margin-top: 30px;
+  }
+`;
+
+const Back = css`
+  margin-left: 165px;
+  @media (max-width: 1170px) {
+    margin-left: 30px;
+  }
 `;
 
 export interface FeaturesProps {}
 
 const Features: React.FC<FeaturesProps> = () => {
-  const [currentJoke, setCurrentJoke] = useState({
-    title: "",
-    paragraph: "",
-  });
-  const [showJoke, setShowJoke] = useState(false);
-
+  const [currentJokeTitle, setCurrentJokeTitle] = useState<string>();
+  const [currentFilter, setCurrentFilter] = useState<string>();
+  const currentJoke = jokeText.find((j) => j.title === currentJokeTitle);
+  let allJokes = [...jokeText];
+  if (currentFilter) {
+    allJokes = allJokes.filter((j) => j.type === currentFilter);
+  }
   return (
-    <FeaturesWrapper>
-      {showJoke ? (
+    <>
+      <Header onClickTitle={(title) => setCurrentJokeTitle(title)} />
+      {currentJoke ? (
         <Details>
           <GoBackButton
+            css={Back}
             onClick={() => {
-              setShowJoke(false);
+              setCurrentJokeTitle(undefined);
             }}
           />
           <JokeContent>
@@ -159,11 +182,11 @@ const Features: React.FC<FeaturesProps> = () => {
               title={currentJoke.title}
               paragraph={currentJoke.paragraph}
             />
-            <TopTenJokes />
+            <TopTenJokes css={TopTen} />
           </JokeContent>
         </Details>
       ) : (
-        <>
+        <FeaturesWrapper>
           <Joke>
             {jokeTypeData.map((v, i) => {
               return (
@@ -172,6 +195,7 @@ const Features: React.FC<FeaturesProps> = () => {
                   color={v.color}
                   text={v.text}
                   yellow={v.yellow}
+                  onClick={() => setCurrentFilter(v.text)}
                 />
               );
             })}
@@ -185,15 +209,14 @@ const Features: React.FC<FeaturesProps> = () => {
             <p>special jokes</p>
           </Special>
           <JokeHolderDiv>
-            {jokeText.map((v, i) => {
+            {allJokes.map((v, i) => {
               return (
                 <JokeCard
                   key={i}
                   title={v.title}
                   paragraph={v.paragraph}
                   onShow={() => {
-                    setCurrentJoke(v);
-                    setShowJoke(true);
+                    setCurrentJokeTitle(v.title);
                   }}
                 />
               );
@@ -205,9 +228,9 @@ const Features: React.FC<FeaturesProps> = () => {
               <Arrow />
             </AllJokes>
           </ViewMore>
-        </>
+        </FeaturesWrapper>
       )}
-    </FeaturesWrapper>
+    </>
   );
 };
 

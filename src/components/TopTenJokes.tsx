@@ -4,7 +4,6 @@ import { topJokes } from "./SimpleData";
 
 const TopTenMain = styled.div`
   width: 350px;
-  height: 369px;
   padding: 32px 61px 35px 32px;
   display: flex;
   flex-direction: column;
@@ -33,6 +32,7 @@ const TopJokesHolder = styled.div`
 `;
 
 interface TopTenProps {
+  className?: string;
   title?: string;
   paragraph1?: string;
   paragraph2?: string;
@@ -41,7 +41,7 @@ interface TopTenProps {
 
 const TopTenJokes: React.FC<TopTenProps> = (props) => {
   return (
-    <TopTenMain>
+    <TopTenMain className={props.className}>
       <Title>
         <h3>THE TOP 10 JOKES THIS WEEK</h3>
       </Title>

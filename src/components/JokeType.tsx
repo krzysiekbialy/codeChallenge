@@ -26,6 +26,7 @@ interface JokeTypeProps {
   color: string;
   text: string;
   yellow?: boolean;
+  onClick: () => void;
 }
 
 const JokeType: React.FC<JokeTypeProps> = (props) => {
@@ -35,6 +36,7 @@ const JokeType: React.FC<JokeTypeProps> = (props) => {
         backgroundColor: `${props.color}`,
         ...(props.yellow && { border: borderP }),
       }}
+      onClick={props.onClick}
     >
       <Title
         style={{

@@ -1,7 +1,5 @@
 import * as React from "react";
 import styled from "@emotion/styled";
-import { jokeText } from "./SimpleData";
-
 const JokeCardMain = styled.div`
   padding-top: 17px;
   padding-left: 16px;
@@ -55,14 +53,21 @@ const Line = styled.span`
   width: 235px;
   height: 1px;
   display: flex;
-  align-self: end;
+  align-self: flex-end;
   margin-right: 19px;
+  @media (max-width: 764px) {
+    display: none;
+  }
 `;
+
 const Number = styled.p`
   font-size: 14px;
   color: #cfb995;
   display: flex;
-  align-self: end;
+  align-self: flex-end;
+  @media (max-width: 764px) {
+    flex: 1;
+  }
 `;
 const Paragraph = styled.div`
   flex: 1;
@@ -79,12 +84,14 @@ const Paragraph = styled.div`
 
 const TopHolder = styled.div`
   display: flex;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
 `;
 
 const Tending = styled.div`
   display: flex;
-  flex: 1;
-  justify-content: end;
   align-items: center;
   margin-right: 22px;
   p {

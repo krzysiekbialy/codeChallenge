@@ -7,18 +7,6 @@ import Wrapper from "../components/Wrapper";
 import IndexLayout from "../layouts";
 import { colors } from "../styles/colors";
 import { maxwidth, SiteHeader } from "../styles/shared";
-import { PageContext } from "../templates/post";
-
-const SiteNavCenter = styled.nav`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-  .site-nav-logo {
-    margin-right: 0;
-  }
-`;
 
 const ErrorTemplate = css`
   padding: 7vw 4vw;
@@ -45,18 +33,7 @@ const ErrorLink = css`
   margin-top: 5px;
 `;
 
-interface NotFoundTemplateProps {
-  data: {
-    allMarkdownRemark: {
-      totalCount: number;
-      edges: Array<{
-        node: PageContext;
-      }>;
-    };
-  };
-}
-
-const NotFoundPage: React.FC<NotFoundTemplateProps> = () => {
+const NotFoundPage: React.FC = () => {
   return (
     <IndexLayout>
       <Wrapper>

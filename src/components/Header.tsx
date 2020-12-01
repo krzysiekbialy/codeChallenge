@@ -197,9 +197,10 @@ const linksData = [
 
 export interface SiteNavProps {
   headerProps?: boolean;
+  onClickTitle: (title: string) => void;
 }
 
-const Header: React.FC<SiteNavProps> = ({ headerProps }) => {
+const Header: React.FC<SiteNavProps> = ({ headerProps, onClickTitle }) => {
   const [collapseActive, setCollapseActive] = useState(false);
   return (
     <Wrapper id="Header" className={headerProps ? "eVisit" : ""}>
@@ -255,7 +256,7 @@ const Header: React.FC<SiteNavProps> = ({ headerProps }) => {
             <p>Daily Laughs for you and yours</p>
           </TitleP>
         </TitleHolder>
-        <Search />
+        <Search onClickTile={onClickTitle} />
       </Holder>
     </Wrapper>
   );

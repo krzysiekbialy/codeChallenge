@@ -1,8 +1,6 @@
-import * as React from "react";
-import usePortal from "react-useportal";
+import React, { useState, useEffect } from "react";
 import styled from "@emotion/styled";
-import { topJokes } from "./SimpleData";
-import { Link } from "gatsby";
+import { jokeText } from "./SimpleData";
 
 const search = require("../assets/search.svg");
 const bolt = require("../assets/bolt.svg");
@@ -14,7 +12,6 @@ const Holder = styled.div`
 
 const SearchInput = styled.input`
   margin-top: 45px;
-  type: text;
   height: 48px;
   width: 458px;
   border-radius: 4px;
@@ -81,41 +78,57 @@ const Span = styled.span`
   height: 1px;
 `;
 
-interface SearchProps {}
+interface SearchProps {
+  onClickTile: (title: string) => void;
+}
 
-let data = topJokes;
+const Search: React.FC<SearchProps> = ({ onClickTile }) => {
+  const [foundJokes, setFoundJokes] = useState<typeof jokeText>([]);
+  const [inputString, setInputString] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
 
-const filter = (v: string) => {
-  const filterJokes = topJokes.filter((el) => {
-    return el.text.includes(v);
-  });
-  data = filterJokes;
-};
-
-const Search: React.FC<SearchProps> = (props) => {
-  const [openPortal, closePortal, isOpen, Portal] = usePortal();
+  useEffect(() => {
+    if (!inputString || inputString.length === 0) {
+      setFoundJokes([]);
+      setIsOpen(false);
+      return;
+    }
+    setFoundJokes(
+      jokeText.filter((el) => {
+        return el.title.toLowerCase().includes(inputString.toLowerCase());
+      })
+    );
+    setIsOpen(true);
+  }, [inputString]);
 
   return (
     <Holder>
       <SearchInput
+        type="text"
+        value={inputString}
         placeholder={"How can we make you laugh today?"}
         onChange={(e) => {
-          filter(e.target.value);
+          setInputString(e.target.value);
         }}
       ></SearchInput>
-      <Icon onClick={openPortal} />
+      <Icon onClick={() => setIsOpen(true)} />
 
       {isOpen && (
         <SearchAnswer>
-          {data.map((v, i) => {
+          {foundJokes.map((v, i) => {
             return (
-              <>
-                <AnswerContent>
+              <React.Fragment key={v.title}>
+                <AnswerContent
+                  onClick={() => {
+                    onClickTile(v.title);
+                    setIsOpen(false);
+                  }}
+                >
                   <Bolt />
-                  <p key={i}>{v.text}</p>
+                  <p key={i}>{v.title}</p>
                 </AnswerContent>
-                {i !== topJokes.length - 1 && <Span />}
-              </>
+                {i !== foundJokes.length - 1 && <Span />}
+              </React.Fragment>
             );
           })}
         </SearchAnswer>

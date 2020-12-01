@@ -1,4 +1,3 @@
-import { Global } from "@emotion/core";
 import * as React from "react";
 import { Helmet } from "react-helmet";
 import config from "../website-config";
