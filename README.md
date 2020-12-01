@@ -1,6 +1,6 @@
 # Code Challenge
 
-Code challenge for VEHICULUM mobility solutions GmbH | Paul-Lincke-Ufer 39/40 | 10999 Berlin
+Code challenge
 
 # Install
 
