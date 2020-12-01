@@ -34,7 +34,7 @@ const ThumbUpNumber = styled.p``;
 
 interface ThumbUpProps {}
 
-const ThumbUp: React.FC<ThumbUpProps> = (props) => {
+const ThumbUp: React.FC<ThumbUpProps> = () => {
   return (
     <ThumbUpMain>
       <ThumbDownHolder>
