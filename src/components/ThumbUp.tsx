@@ -28,11 +28,13 @@ const Icon = styled.div`
 
 const ThumbUpNumber = styled.p``;
 
-interface ThumbUpProps {}
+interface ThumbUpProps {
+  className?: string;
+}
 
 const ThumbUp: React.FC<ThumbUpProps> = (props) => {
   return (
-    <ThumbUpMain>
+    <ThumbUpMain css={props.className}>
       <ThumbUpHolder>
         <Icon></Icon>
       </ThumbUpHolder>

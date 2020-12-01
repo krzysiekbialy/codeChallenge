@@ -10,7 +10,7 @@ const JokeCardMain = styled.div`
   flex-direction: column;
   justify-content: stretch;
   width: 360px;
-  height: 264px;
+  min-height: 264px;
   border-radius: 2px;
   border: solid 1px #ecebe9;
   margin-bottom: 38px;
@@ -47,6 +47,7 @@ const Title = styled.div`
     font-size: 16px;
     font-weight: 600;
     text-transform: uppercase;
+    color: #303030;
   }
 `;
 
@@ -54,6 +55,7 @@ const Paragraph = styled.p`
   flex: 1;
   padding-left: 16px;
   padding-right: 16px;
+  color: #303030;
 `;
 
 const Stats = styled.div`

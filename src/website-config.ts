@@ -61,9 +61,9 @@ const config: WebsiteConfig = {
   logo: "../src/assets/fullLogo.svg",
   defaultOpenTag: ".../src/assets/defOpenGraph.png",
   lang: "en",
-  siteUrl: "https://aexol.com",
-  facebook: "https://www.facebook.com/aexol",
-  twitter: "https://twitter.com/Aexol",
+  siteUrl: "https://codeChallenge.com",
+  facebook: "https://www.facebook.com/codeChallenge",
+  twitter: "https://twitter.com/codeChallenge",
   showSubscribe: false,
   mailchimpAction:
     "https://twitter.us19.list-manage.com/subscribe/post?u=a89b6987ac248c81b0b7f3a0f&amp;id=7d777b7d75",

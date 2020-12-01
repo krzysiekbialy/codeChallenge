@@ -3,7 +3,7 @@
   "description": "codeChallenge",
   "version": "0.0.0",
   "private": true,
-  "author": "Aexol team <aexol@aexol.com>",
+  "author": "codeChallenge.com team <code@codeChallenge.com>",
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",

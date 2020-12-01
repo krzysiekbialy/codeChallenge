@@ -9,6 +9,8 @@ import { Link } from "react-scroll";
 const img = require("../assets/background.png");
 const LogoV = require("../assets/vehiculum-logo.svg");
 import Search from "./Search";
+import { css } from "@emotion/core";
+import MenuSelect from "./MenuSelect";
 
 const SideMenu = styled.div`
   right: -500px;
@@ -157,7 +159,7 @@ const TitleP = styled.div`
 
 const Logo = styled.div`
   margin-left: 165px;
-  flex: 5;
+  flex: 4;
   width: 198px;
   height: 36px;
   display: flex;
@@ -179,6 +181,13 @@ const MenuOptionHolder = styled.div`
     font-style: normal;
     line-height: 1.5;
   }
+  @media (max-width: 1000px) {
+    display: none;
+  }
+`;
+
+const MenuSelectCss = css`
+  flex: 2;
   @media (max-width: 1000px) {
     display: none;
   }
@@ -212,6 +221,7 @@ const Header: React.FC<SiteNavProps> = ({ headerProps, onClickTitle }) => {
             <p key={v}>{i.text}</p>
           </MenuOptionHolder>
         ))}
+        <MenuSelect css={MenuSelectCss} />
         <HambMenu
           width="40"
           height="40"

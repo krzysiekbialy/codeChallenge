@@ -1,5 +1,14 @@
 import * as React from "react";
 import styled from "@emotion/styled";
+import ThumbUp from "./ThumbUp";
+import ThumbDown from "./ThumbDown";
+import { css } from "@emotion/core";
+
+const JokeCardDetailsHolder = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 const JokeCardMain = styled.div`
   padding-top: 17px;
   padding-left: 16px;
@@ -109,35 +118,62 @@ const Dot = styled.span`
   background-color: #f3a536;
 `;
 
+const Thumbs = styled.div`
+  display: flex;
+  margin-top: 20px;
+`;
+
+const margin = css`
+  margin-right: 30px;
+`;
+
 interface JokeCardDetailsProps {
   title?: string;
   paragraph?: string;
 }
 const JokeCardDetails: React.FC<JokeCardDetailsProps> = (props) => {
   return (
-    <JokeCardMain>
-      <TopHolder>
-        <Special>
-          <p>Special Joke</p>
-        </Special>
-        <Tending>
-          <Dot />
-          <p>Tending</p>
-        </Tending>
-      </TopHolder>
+    <JokeCardDetailsHolder>
+      <JokeCardMain>
+        <TopHolder>
+          <Special>
+            <p>Special Joke</p>
+          </Special>
+          <Tending>
+            <Dot />
+            <p>Tending</p>
+          </Tending>
+        </TopHolder>
 
-      <TitleHolder>
-        <Title>
-          <h3>{props.title}</h3>
-        </Title>
-        <Line />
-        <Number>NO #1</Number>
-      </TitleHolder>
+        <TitleHolder>
+          <Title>
+            <h3>{props.title}</h3>
+          </Title>
+          <Line />
+          <Number>NO #1</Number>
+        </TitleHolder>
 
-      <Paragraph>
-        <p>{props.paragraph}</p>
-      </Paragraph>
-    </JokeCardMain>
+        <Paragraph>
+          <p>
+            {props.paragraph
+              ?.replace("St.", "St,")
+              .split(". ")
+              .map((v, i) => {
+                return (
+                  <>
+                    <p>{v.replace("St,", "St.")}.</p>
+                    <br />
+                  </>
+                );
+              })}
+          </p>
+        </Paragraph>
+      </JokeCardMain>
+      <Thumbs>
+        <ThumbUp css={margin} />
+        <ThumbDown />
+      </Thumbs>
+    </JokeCardDetailsHolder>
   );
 };
 
