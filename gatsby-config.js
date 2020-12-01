@@ -1,7 +1,7 @@
 const path = require("path"); // eslint-disable-line
 
 module.exports = {
-  pathPrefix: "krzysiekbialy.github.io/codeChallenge",
+  pathPrefix: "/codeChallenge",
   siteMetadata: {
     title: "Aexol - Innovative Software Development studio",
     description:
