@@ -5,28 +5,12 @@ import { jokeText } from "./SimpleData";
 const search = require("../assets/search.svg");
 const bolt = require("../assets/bolt.svg");
 
-// const Holder = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   width: 458px;
-// `;
 const Holder = styled.div`
   display: flex;
   flex-direction: column;
   width: 80%;
   max-width: 453px;
 `;
-
-// const SearchInput = styled.input`
-//   margin-top: 45px;
-//   height: 48px;
-//   border-radius: 4px;
-//   border: 2px solid white;
-//   background-color: transparent;
-//   padding-left: 10px;
-//   font-size: 16px;
-//   color: #b2b2b2;
-// `;
 
 const SearchInput = styled.input`
   margin-top: 45px;
@@ -38,20 +22,6 @@ const SearchInput = styled.input`
   font-size: 16px;
   color: #b2b2b2;
 `;
-// const SearchAnswer = styled.div`
-//   display: flex;
-//   position: absolute;
-//   flex-direction: column;
-//   margin-top: 115px;
-//   display: flex;
-//   align-items: left;
-//   height: max-content;
-//   padding-right: 16px;
-//   padding-left: 16px;
-//   border-radius: 4px;
-//   border: 2px solid white;
-//   background-color: white;
-// `;
 
 const SearchAnswer = styled.div`
   display: flex;
