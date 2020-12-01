@@ -10,18 +10,23 @@ const ThumbUpMain = styled.div`
 
 const ThumbUpHolder = styled.div`
   display: flex;
+  cursor: pointer;
   justify-content: center;
   align-items: center;
   width: 40px;
   height: 40px;
   border-radius: 50px;
   background-color: #68b680;
+  &:hover {
+    background-color: #46915d;
+  }
 `;
 
 const Icon = styled.div`
   background-image: url(${hand});
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
   height: 24px;
   width: 22px;
 `;

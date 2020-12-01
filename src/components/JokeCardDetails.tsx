@@ -4,6 +4,8 @@ import ThumbUp from "./ThumbUp";
 import ThumbDown from "./ThumbDown";
 import { css } from "@emotion/core";
 
+const arrow = require("../assets/arrowLeft.svg");
+
 const JokeCardDetailsHolder = styled.div`
   display: flex;
   flex-direction: column;
@@ -134,6 +136,75 @@ const margin = css`
   margin-right: 30px;
 `;
 
+const Addons = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 30px;
+  padding-top: 22px;
+  @media (max-width: 800px) {
+    width: 80%;
+    padding-right: 0;
+  }
+`;
+
+const NextPreviusJoke = styled.div`
+  display: flex;
+`;
+const Next = styled.div`
+  padding-right: 16px;
+  padding-left: 16px;
+  display: flex;
+  justify-content: space-between;
+  border: solid 1px #ecebe9;
+  width: 131px;
+  height: 40px;
+  align-items: center;
+  cursor: pointer;
+  p {
+    color: #cfb995;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+`;
+const Previus = styled.div`
+  display: flex;
+  padding-right: 16px;
+  padding-left: 16px;
+  justify-content: space-between;
+  border: solid 1px #ecebe9;
+  width: 131px;
+  height: 40px;
+  margin-right: 8px;
+  align-items: center;
+  cursor: pointer;
+  p {
+    color: #cfb995;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+`;
+
+const ArrowLeft = styled.div`
+  width: 8.5px;
+  height: 14.9px;
+  background-image: url(${arrow});
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+`;
+const ArrowRight = styled.div`
+  margin-left: 8px;
+  width: 8.5px;
+  height: 14.9px;
+  background-image: url(${arrow});
+  transform: rotate(180deg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+`;
+
 interface JokeCardDetailsProps {
   title?: string;
   paragraph?: string;
@@ -176,10 +247,25 @@ const JokeCardDetails: React.FC<JokeCardDetailsProps> = (props) => {
           </p>
         </Paragraph>
       </JokeCardMain>
-      <Thumbs>
-        <ThumbUp css={margin} />
-        <ThumbDown />
-      </Thumbs>
+
+      <Addons>
+        <Thumbs>
+          <ThumbUp css={margin} />
+          <ThumbDown />
+        </Thumbs>
+
+        <NextPreviusJoke>
+          <Previus>
+            <ArrowLeft />
+            <p>Prev. joke</p>
+          </Previus>
+
+          <Next>
+            <p>Next Joke</p>
+            <ArrowRight />
+          </Next>
+        </NextPreviusJoke>
+      </Addons>
     </JokeCardDetailsHolder>
   );
 };

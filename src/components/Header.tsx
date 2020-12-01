@@ -159,6 +159,7 @@ const TitleP = styled.div`
 
 const Logo = styled.div`
   margin-left: 165px;
+  cursor: pointer;
   flex: 4;
   width: 198px;
   height: 36px;

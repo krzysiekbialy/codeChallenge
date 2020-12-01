@@ -15,6 +15,9 @@ const JokeCardMain = styled.div`
   border: solid 1px #ecebe9;
   margin-bottom: 38px;
   margin-right: 15px;
+  &:hover {
+    box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.15);
+  }
 `;
 
 const Bolt = styled.div`

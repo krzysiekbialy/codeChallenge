@@ -7,9 +7,13 @@ const bolt = require("../assets/bolt.svg");
 
 const Holder = styled.div`
   display: flex;
+  position: relative;
   flex-direction: column;
   width: 80%;
   max-width: 453px;
+  @media (max-width: 600px) {
+    align-items: center;
+  }
 `;
 
 const SearchInput = styled.input`
@@ -33,7 +37,7 @@ const SearchAnswer = styled.div`
   height: max-content;
   padding-right: 16px;
   padding-left: 16px;
-  width: 82%;
+  width: 100%;
   max-width: 453px;
   border-radius: 4px;
   border: 2px solid white;
@@ -51,8 +55,7 @@ const Icon = styled.div`
   transform: translateX(420px) translateY(55px);
   cursor: pointer;
   @media (max-width: 600px) {
-    right: 30%;
-    top: 270px;
+    display: none;
   }
 `;
 

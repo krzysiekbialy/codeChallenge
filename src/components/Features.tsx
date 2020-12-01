@@ -125,15 +125,6 @@ const Details = styled.div`
   padding-bottom: 73px;
 `;
 
-// let data = topJokes;
-
-// const filter = (v: string) => {
-//   const filterJokes = topJokes.filter((el) => {
-//     return el.text.includes(v);
-//   });
-//   data = filterJokes;
-// };
-
 const JokeContent = styled.div`
   display: flex;
   justify-content: center;
