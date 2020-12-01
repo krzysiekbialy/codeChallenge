@@ -55,7 +55,7 @@ const Options = styled.div`
   position: absolute;
   border-radius: 4px;
   bottom: 0;
-  width: 100%;
+  min-width: 70%;
   transform: translateY(120%);
   border: solid 1px #d7d7d7;
 `;
@@ -74,6 +74,7 @@ const Publish = styled.p`
 const MenuP = styled.p`
   font-size: 14px;
   color: #5e5e5e;
+  cursor: pointer;
 `;
 
 const MenuPHolder = styled.div`

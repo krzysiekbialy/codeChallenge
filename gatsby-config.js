@@ -5,7 +5,7 @@ module.exports = {
   siteMetadata: {
     title: "codeChallenge",
     description: "codeChallenge",
-    siteUrl: "codeChallenge",
+    siteUrl: "https://krzysiekbialy.github.io/codeChallenge/",
   },
   plugins: [
     "gatsby-plugin-sitemap",
@@ -14,7 +14,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-canonical-urls",
       options: {
-        siteUrl: "codeChallenge",
+        siteUrl: "https://krzysiekbialy.github.io/codeChallenge/",
       },
     },
     "gatsby-plugin-emotion",
