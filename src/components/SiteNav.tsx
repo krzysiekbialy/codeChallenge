@@ -1,4 +1,3 @@
-// tslint:disable:no-http-string
 import React, { useState } from "react";
 import styled from "@emotion/styled";
 
