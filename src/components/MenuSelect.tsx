@@ -55,7 +55,9 @@ const Options = styled.div`
   position: absolute;
   border-radius: 4px;
   bottom: 0;
-  min-width: 70%;
+  padding-left: 5%;
+  padding-right: 5%;
+  width: fit-content;
   transform: translateY(120%);
   border: solid 1px #d7d7d7;
 `;
