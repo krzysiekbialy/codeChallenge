@@ -3,8 +3,6 @@ import React, { useState } from "react";
 import styled from "@emotion/styled";
 // import { css } from "@emotion/core";
 // @ts-ignore
-import FacebookIcon from "../assets/FacebookIcon";
-import { Link } from "react-scroll";
 
 const img = require("../assets/background.png");
 const LogoV = require("../assets/vehiculum-logo.svg");
@@ -33,7 +31,6 @@ const SideMenu = styled.div`
     right: 0;
     opacity: 1;
     z-index: 100;
-    /* right: 500px; */
   }
 `;
 
@@ -212,14 +209,13 @@ const SearchHeader = css`
   }
 `;
 export interface SiteNavProps {
-  headerProps?: boolean;
   onClickTitle: (title: string) => void;
 }
 
-const Header: React.FC<SiteNavProps> = ({ headerProps, onClickTitle }) => {
+const Header: React.FC<SiteNavProps> = ({ onClickTitle }) => {
   const [collapseActive, setCollapseActive] = useState(false);
   return (
-    <Wrapper id="Header" className={headerProps ? "eVisit" : ""}>
+    <Wrapper>
       <Nav>
         <Logo />
 
@@ -252,11 +248,9 @@ const Header: React.FC<SiteNavProps> = ({ headerProps, onClickTitle }) => {
             <ul>
               {linksData.map((item) => {
                 return (
-                  <Link to={item.to} smooth={"0.4"}>
-                    <Icon>
-                      <p> {item.text}</p>
-                    </Icon>
-                  </Link>
+                  <Icon>
+                    <p> {item.text}</p>
+                  </Icon>
                 );
               })}
             </ul>

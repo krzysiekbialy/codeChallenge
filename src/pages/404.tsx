@@ -2,7 +2,6 @@ import { Link } from "gatsby";
 import * as React from "react";
 import styled from "@emotion/styled";
 import { css } from "@emotion/core";
-
 import Wrapper from "../components/Wrapper";
 import IndexLayout from "../layouts";
 import { colors } from "../styles/colors";

@@ -1,7 +1,6 @@
 // tslint:disable:no-http-string
 import React, { useState } from "react";
 import styled from "@emotion/styled";
-import { Link } from "react-scroll";
 
 import { colors } from "../styles/colors";
 
@@ -115,8 +114,7 @@ const linksData = [
   },
 ];
 
-export interface siteNavProps {
-}
+export interface siteNavProps {}
 
 const SiteNav: React.FC<siteNavProps> = ({}) => {
   const [collapseActive, setCollapseActive] = useState(false);
@@ -146,11 +144,9 @@ const SiteNav: React.FC<siteNavProps> = ({}) => {
           <ul>
             {linksData.map((item) => {
               return (
-                <Link spy={true} smooth={true} offset={-45} to={item.to}>
-                  <Icon>
-                    <p> {item.text}</p>
-                  </Icon>
-                </Link>
+                <Icon>
+                  <p> {item.text}</p>
+                </Icon>
               );
             })}
           </ul>
