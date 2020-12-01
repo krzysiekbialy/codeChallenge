@@ -26,7 +26,7 @@ const SideMenu = styled.div`
   transition-duration: 0.8s;
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
-  @media (min-width: 1000px) {
+  @media (min-width: 1040px) {
     display: none;
   }
   &.collapseActive {
@@ -51,7 +51,7 @@ const Icon = styled.div`
     }
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1040px) {
     margin-right: 4%;
   }
   @media (max-width: 780px) {
@@ -83,7 +83,7 @@ const HambMenu = styled.svg`
   z-index: 5;
   display: none;
   cursor: pointer;
-  @media (max-width: 1000px) {
+  @media (max-width: 1040px) {
     display: block;
   }
 `;
@@ -165,7 +165,7 @@ const Logo = styled.div`
   display: flex;
   background-image: url(${LogoV});
   background-repeat: no-repeat;
-  @media (max-width: 1000px) {
+  @media (max-width: 1040px) {
     background-size: contain;
   }
   @media (max-width: 690px) {
@@ -174,6 +174,7 @@ const Logo = styled.div`
 `;
 
 const MenuOptionHolder = styled.div`
+  cursor: pointer;
   flex: 2;
   p {
     color: white;
@@ -181,14 +182,14 @@ const MenuOptionHolder = styled.div`
     font-style: normal;
     line-height: 1.5;
   }
-  @media (max-width: 1000px) {
+  @media (max-width: 1040px) {
     display: none;
   }
 `;
 
 const MenuSelectCss = css`
   flex: 2;
-  @media (max-width: 1000px) {
+  @media (max-width: 1040px) {
     display: none;
   }
 `;
@@ -204,6 +205,11 @@ const linksData = [
   },
 ];
 
+const SearchHeader = css`
+  @media (max-width: 600px) {
+    width: 80%;
+  }
+`;
 export interface SiteNavProps {
   headerProps?: boolean;
   onClickTitle: (title: string) => void;
@@ -266,7 +272,7 @@ const Header: React.FC<SiteNavProps> = ({ headerProps, onClickTitle }) => {
             <p>Daily Laughs for you and yours</p>
           </TitleP>
         </TitleHolder>
-        <Search onClickTile={onClickTitle} />
+        <Search onClickTile={onClickTitle} css={SearchHeader} />
       </Holder>
     </Wrapper>
   );

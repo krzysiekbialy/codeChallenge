@@ -5,15 +5,32 @@ import { jokeText } from "./SimpleData";
 const search = require("../assets/search.svg");
 const bolt = require("../assets/bolt.svg");
 
+// const Holder = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   width: 458px;
+// `;
 const Holder = styled.div`
   display: flex;
   flex-direction: column;
+  width: 80%;
+  max-width: 453px;
 `;
+
+// const SearchInput = styled.input`
+//   margin-top: 45px;
+//   height: 48px;
+//   border-radius: 4px;
+//   border: 2px solid white;
+//   background-color: transparent;
+//   padding-left: 10px;
+//   font-size: 16px;
+//   color: #b2b2b2;
+// `;
 
 const SearchInput = styled.input`
   margin-top: 45px;
   height: 48px;
-  width: 458px;
   border-radius: 4px;
   border: 2px solid white;
   background-color: transparent;
@@ -21,6 +38,20 @@ const SearchInput = styled.input`
   font-size: 16px;
   color: #b2b2b2;
 `;
+// const SearchAnswer = styled.div`
+//   display: flex;
+//   position: absolute;
+//   flex-direction: column;
+//   margin-top: 115px;
+//   display: flex;
+//   align-items: left;
+//   height: max-content;
+//   padding-right: 16px;
+//   padding-left: 16px;
+//   border-radius: 4px;
+//   border: 2px solid white;
+//   background-color: white;
+// `;
 
 const SearchAnswer = styled.div`
   display: flex;
@@ -32,11 +63,13 @@ const SearchAnswer = styled.div`
   height: max-content;
   padding-right: 16px;
   padding-left: 16px;
-  width: 458px;
+  width: 82%;
+  max-width: 453px;
   border-radius: 4px;
   border: 2px solid white;
   background-color: white;
 `;
+
 const Icon = styled.div`
   position: absolute;
   background-image: url(${search});
@@ -47,6 +80,10 @@ const Icon = styled.div`
   padding-left: 16px;
   transform: translateX(420px) translateY(55px);
   cursor: pointer;
+  @media (max-width: 600px) {
+    right: 30%;
+    top: 270px;
+  }
 `;
 
 const AnswerContent = styled.div`
@@ -79,10 +116,11 @@ const Span = styled.span`
 `;
 
 interface SearchProps {
+  className?: string;
   onClickTile: (title: string) => void;
 }
 
-const Search: React.FC<SearchProps> = ({ onClickTile }) => {
+const Search: React.FC<SearchProps> = ({ onClickTile, className }) => {
   const [foundJokes, setFoundJokes] = useState<typeof jokeText>([]);
   const [inputString, setInputString] = useState("");
   const [isOpen, setIsOpen] = useState(false);
@@ -104,6 +142,7 @@ const Search: React.FC<SearchProps> = ({ onClickTile }) => {
   return (
     <Holder>
       <SearchInput
+        css={className}
         type="text"
         value={inputString}
         placeholder={"How can we make you laugh today?"}
@@ -114,7 +153,7 @@ const Search: React.FC<SearchProps> = ({ onClickTile }) => {
       <Icon onClick={() => setIsOpen(true)} />
 
       {isOpen && (
-        <SearchAnswer>
+        <SearchAnswer css={className}>
           {foundJokes.map((v, i) => {
             return (
               <React.Fragment key={v.title}>

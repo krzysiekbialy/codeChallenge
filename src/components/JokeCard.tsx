@@ -29,6 +29,7 @@ const Bolt = styled.div`
 `;
 
 const Arrow = styled.div`
+  cursor: pointer;
   margin-left: 8px;
   width: 21px;
   height: 14px;

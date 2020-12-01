@@ -57,6 +57,7 @@ const Options = styled.div`
   bottom: 0;
   width: 100%;
   transform: translateY(120%);
+  box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.15);
 `;
 
 const Publish = styled.p`

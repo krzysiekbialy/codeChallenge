@@ -7,6 +7,9 @@ import { css } from "@emotion/core";
 const JokeCardDetailsHolder = styled.div`
   display: flex;
   flex-direction: column;
+  @media (max-width: 800px) {
+    align-items: center;
+  }
 `;
 
 const JokeCardMain = styled.div`
@@ -16,10 +19,14 @@ const JokeCardMain = styled.div`
   flex-direction: column;
   justify-content: stretch;
   width: 730px;
-  height: 287px;
+  min-height: 287px;
   border-radius: 4px;
   border: solid 1px #ecebe9;
   margin-right: 30px;
+  @media (max-width: 800px) {
+    width: 80%;
+    margin-right: 0px;
+  }
 `;
 
 const TitleHolder = styled.div`
@@ -158,7 +165,7 @@ const JokeCardDetails: React.FC<JokeCardDetailsProps> = (props) => {
             {props.paragraph
               ?.replace("St.", "St,")
               .split(". ")
-              .map((v, i) => {
+              .map((v) => {
                 return (
                   <>
                     <p>{v.replace("St,", "St.")}.</p>
