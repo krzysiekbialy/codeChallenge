@@ -3,10 +3,9 @@ const path = require("path"); // eslint-disable-line
 module.exports = {
   pathPrefix: "/codeChallenge",
   siteMetadata: {
-    title: "Aexol - Innovative Software Development studio",
-    description:
-      "We are the team responsible for GraphQL Editor Stucco and Foodeli platforms. We can work as your software consultants.",
-    siteUrl: "https://codeChallenge.com", // full path to blog - no ending slash
+    title: "codeChallenge",
+    description: "codeChallenge",
+    siteUrl: "codeChallenge",
   },
   plugins: [
     "gatsby-plugin-sitemap",
@@ -15,7 +14,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-canonical-urls",
       options: {
-        siteUrl: "https://codeChallenge.com",
+        siteUrl: "codeChallenge",
       },
     },
     "gatsby-plugin-emotion",
