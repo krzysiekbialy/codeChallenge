@@ -37,7 +37,6 @@
     "gatsby-plugin-typescript": "2.4.0",
     "gatsby-source-filesystem": "2.3.0",
     "gatsby-transformer-json": "2.4.0",
-    "gatsby-transformer-remark": "2.8.3",
     "gatsby-transformer-sharp": "2.5.0",
     "gatsby-transformer-yaml": "2.4.0",
     "lodash": "4.17.15",
