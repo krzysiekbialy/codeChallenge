@@ -20,7 +20,6 @@ module.exports = {
     "gatsby-plugin-emotion",
     "gatsby-plugin-typescript",
     "gatsby-transformer-sharp",
-    "gatsby-plugin-react-helmet",
     "gatsby-transformer-yaml",
     {
       resolve: "gatsby-plugin-postcss",
