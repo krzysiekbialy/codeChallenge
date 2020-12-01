@@ -190,7 +190,7 @@ const Features: React.FC<FeaturesProps> = () => {
                 />
               );
             })}
-            <AllJokes>
+            <AllJokes onClick={() => setCurrentFilter(undefined)}>
               <JokesTitle>VIEW ALL</JokesTitle>
               <Arrow />
             </AllJokes>

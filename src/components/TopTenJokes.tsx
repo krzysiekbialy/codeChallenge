@@ -25,6 +25,7 @@ const TopJokesHolder = styled.div`
   flex-direction: column;
   p {
     font-size: 15px;
+    cursor: pointer;
     line-height: 1.47;
     text-decoration: underline;
     margin-bottom: 8px;
