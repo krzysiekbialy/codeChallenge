@@ -206,7 +206,7 @@ const Features: React.FC<FeaturesProps> = () => {
 
   const viewJokeBoxes = showJokeBoxes ? allJokes : allJokes.slice(0, 5);
 
-  const topTenJokes = allJokes.slice(0, 10) as Joke[];
+  const topTenJokes = jokeText.slice(0, 10) as Joke[];
 
   console.log(topTenJokes);
   return (

@@ -17,7 +17,7 @@ const Holder = styled.div`
 `;
 
 const SearchInput = styled.input`
-  margin-top: 45px;
+  margin-top: 44px;
   height: 48px;
   border-radius: 4px;
   border: 2px solid white;
@@ -26,7 +26,7 @@ const SearchInput = styled.input`
   font-size: 16px;
   color: #b2b2b2;
   @media (max-width: 600px) {
-    font-size: 12px;
+    font-size: 13px;
   }
 `;
 
