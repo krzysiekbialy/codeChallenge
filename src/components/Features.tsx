@@ -161,10 +161,21 @@ const Features: React.FC<FeaturesProps> = () => {
   const [currentJokeTitle, setCurrentJokeTitle] = useState<string>();
   const [currentFilter, setCurrentFilter] = useState<string>();
   const currentJoke = jokeText.find((j) => j.title === currentJokeTitle);
+  const [showAll, setShowAll] = useState(false);
+
+  const [showJokeBoxes, showShowJokeBoxes] = useState(false);
+
   let allJokes = [...jokeText];
   if (currentFilter) {
     allJokes = allJokes.filter((j) => j.type === currentFilter);
   }
+
+  const bkColor =
+    jokeTypeData.find((obj) => obj.text === currentFilter)?.color || "colar";
+
+  const viewList = showAll ? jokeTypeData : jokeTypeData.slice(0, 7);
+
+  const viewJokeBoxes = showJokeBoxes ? allJokes : allJokes.slice(0, 5);
   return (
     <>
       <Header onClickTitle={(title) => setCurrentJokeTitle(title)} />
@@ -180,6 +191,7 @@ const Features: React.FC<FeaturesProps> = () => {
             <JokeCardDetails
               title={currentJoke.title}
               paragraph={currentJoke.paragraph}
+              color={bkColor}
             />
             <TopTenJokes css={TopTen} />
           </JokeContent>
@@ -187,7 +199,7 @@ const Features: React.FC<FeaturesProps> = () => {
       ) : (
         <FeaturesWrapper>
           <Joke>
-            {jokeTypeData.map((v, i) => {
+            {viewList.map((v, i) => {
               return (
                 <JokeType
                   key={i}
@@ -199,16 +211,26 @@ const Features: React.FC<FeaturesProps> = () => {
               );
             })}
             <AllJokes onClick={() => setCurrentFilter(undefined)}>
-              <JokesTitle>VIEW ALL</JokesTitle>
+              <JokesTitle
+                onClick={() => {
+                  setShowAll(!showAll);
+                }}
+              >
+                VIEW ALL
+              </JokesTitle>
               <Arrow />
             </AllJokes>
           </Joke>
           <Span />
-          <Special>
-            <p>special jokes</p>
+          <Special
+            style={{
+              background: `${bkColor}`,
+            }}
+          >
+            <p>{currentFilter || "jokes"}</p>
           </Special>
           <JokeHolderDiv>
-            {allJokes.map((v, i) => {
+            {viewJokeBoxes.map((v, i) => {
               return (
                 <JokeCard
                   key={i}
@@ -223,7 +245,13 @@ const Features: React.FC<FeaturesProps> = () => {
           </JokeHolderDiv>
           <ViewMore>
             <AllJokes>
-              <JokesTitle>VIEW MORE</JokesTitle>
+              <JokesTitle
+                onClick={() => {
+                  showShowJokeBoxes(!showJokeBoxes);
+                }}
+              >
+                VIEW MORE
+              </JokesTitle>
               <Arrow />
             </AllJokes>
           </ViewMore>

@@ -249,21 +249,19 @@ interface JokeCardDetailsProps {
   title?: string;
   paragraph?: string;
   color: string;
-  text: string;
 }
 const JokeCardDetails: React.FC<JokeCardDetailsProps> = (props) => {
+  console.log(props.color);
   return (
     <JokeCardDetailsHolder>
       <JokeCardMain>
         <TopHolder>
           <Special
-            style={
-              {
-                // backgroundColor: `#${props.color}`,
-              }
-            }
+            style={{
+              backgroundColor: `${props.color}`,
+            }}
           >
-            <p>{props.text}</p>
+            <p>{props.title}</p>
           </Special>
           <Tending>
             <Dot />

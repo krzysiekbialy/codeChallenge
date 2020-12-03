@@ -28,6 +28,22 @@ const jokeTypeData = [
     text: "Puns",
     color: "#57dbe6",
   },
+  {
+    text: "Puns2",
+    color: "#57dbe6",
+  },
+  {
+    text: "Puns3",
+    color: "#57dbe6",
+  },
+  {
+    text: "Puns4",
+    color: "#57dbe6",
+  },
+  {
+    text: "Puns5",
+    color: "#57dbe6",
+  },
 ];
 
 const jokeText = [
@@ -78,7 +94,7 @@ const jokeText = [
   },
   {
     type: "Birthday Jokes",
-    title: "Doctor joke2",
+    title: "Doctor joke",
     paragraph: `An officer observes a woman standing in the middle of the street. He approaches her and asks, "Are you okay?"
     The woman replies, "Yes, but how do I get to the hospital?"
     The officer replies, "Just keep standing there."`,
