@@ -29,18 +29,24 @@ const JokeCardMain = styled.div`
     width: 80%;
     margin-right: 0px;
   }
+  @media (max-width: 320px) {
+    padding-right: 0px;
+  }
 `;
 
 const TitleHolder = styled.div`
   display: flex;
   width: 100%;
+  @media (max-width: 320px) {
+    flex-direction: column-reverse;
+  }
 `;
 
 const Special = styled.div`
   width: 119px;
   height: 22px;
   border-radius: 11px;
-  background-color: #57e690;
+  background-color: coral;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,16 +69,24 @@ const Title = styled.div`
     letter-spacing: normal;
     color: #cfb995;
     padding-top: 13px;
+    @media (max-width: 320px) {
+      text-align: center;
+    }
+  }
+  @media (max-width: 320px) {
+    margin-right: 14px;
+    height: 100%;
   }
 `;
 
 const Line = styled.span`
   background-color: #cfb995;
-  width: 235px;
   height: 1px;
   display: flex;
   align-self: flex-end;
   margin-right: 19px;
+  flex: 1;
+  width: 100%;
   @media (max-width: 764px) {
     display: none;
   }
@@ -83,6 +97,8 @@ const Number = styled.p`
   color: #cfb995;
   display: flex;
   align-self: flex-end;
+  justify-content: flex-end;
+  margin-right: 45px;
   @media (max-width: 764px) {
     flex: 1;
   }
@@ -98,14 +114,20 @@ const Paragraph = styled.div`
     font-size: 15px;
     line-height: 1.47;
   }
+  @media (max-width: 320px) {
+    padding-right: 0px;
+    padding: 10px;
+  }
 `;
 
 const TopHolder = styled.div`
   display: flex;
-  display: flex;
   align-items: center;
   width: 100%;
   justify-content: space-between;
+  @media (max-width: 320px) {
+    /* flex-direction: column-reverse; */
+  }
 `;
 
 const Tending = styled.div`
@@ -147,11 +169,30 @@ const Addons = styled.div`
     width: 80%;
     padding-right: 0;
   }
+  @media (max-width: 320px) {
+    flex-direction: column;
+  }
 `;
 
 const NextPreviusJoke = styled.div`
   display: flex;
+  @media (max-width: 320px) {
+    margin-top: 10px;
+  }
 `;
+
+const ArrowRight = styled.div`
+  margin-left: 8px;
+  width: 8.5px;
+  height: 14.9px;
+  z-index: 100;
+  background-image: url(${arrow});
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotate(180deg);
+`;
+
 const Next = styled.div`
   padding-right: 16px;
   padding-left: 16px;
@@ -167,7 +208,21 @@ const Next = styled.div`
     text-transform: uppercase;
     font-size: 14px;
   }
+  &:hover ${ArrowRight} {
+    transform: translateX(10px) rotate(180deg);
+  }
 `;
+
+const ArrowLeft = styled.div`
+  width: 8.5px;
+  z-index: 100;
+  height: 14.9px;
+  background-image: url(${arrow});
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+`;
+
 const Previus = styled.div`
   display: flex;
   padding-right: 16px;
@@ -184,38 +239,31 @@ const Previus = styled.div`
     text-transform: uppercase;
     font-size: 14px;
   }
-`;
 
-const ArrowLeft = styled.div`
-  width: 8.5px;
-  height: 14.9px;
-  background-image: url(${arrow});
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-`;
-const ArrowRight = styled.div`
-  margin-left: 8px;
-  width: 8.5px;
-  height: 14.9px;
-  background-image: url(${arrow});
-  transform: rotate(180deg);
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
+  &:hover ${ArrowLeft} {
+    transform: translateX(-10px) !important;
+  }
 `;
 
 interface JokeCardDetailsProps {
   title?: string;
   paragraph?: string;
+  color: string;
+  text: string;
 }
 const JokeCardDetails: React.FC<JokeCardDetailsProps> = (props) => {
   return (
     <JokeCardDetailsHolder>
       <JokeCardMain>
         <TopHolder>
-          <Special>
-            <p>Special Joke</p>
+          <Special
+            style={
+              {
+                // backgroundColor: `#${props.color}`,
+              }
+            }
+          >
+            <p>{props.text}</p>
           </Special>
           <Tending>
             <Dot />

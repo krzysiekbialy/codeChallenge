@@ -64,8 +64,48 @@ const jokeText = [
     The officer replies, "Just keep standing there."`,
   },
   {
+    type: "Special Jokes",
+    title: "Business Joke2",
+    paragraph: `I went to my boss at work and said, "I need a raise. Three other companies are after me."
+    He said, "Really? Which other companies are after you?"
+    I said, "The electric company, the gas company and the phone company.`,
+  },
+  {
+    type: "Christmas Jokes",
+    title: "Police Jokes2",
+    paragraph: `An officer conducting speed enforcement stops a young man for traveling in excess of 40 mph over the speed limit. The officer approaches the driver and says, "Well, 40 over...I been waiting for you to come along all day."
+    Without pause, the young man replies, "I got here as fast as I could!"`,
+  },
+  {
+    type: "Birthday Jokes",
+    title: "Doctor joke2",
+    paragraph: `An officer observes a woman standing in the middle of the street. He approaches her and asks, "Are you okay?"
+    The woman replies, "Yes, but how do I get to the hospital?"
+    The officer replies, "Just keep standing there."`,
+  },
+  {
     type: "Puns",
     title: "Boss Joke",
+    paragraph: `My boss asked me to put a joke on the first slide of the presentation…apparently a picture of my pay slip wasn’t what he was looking for.`,
+  },
+  {
+    type: "Puns",
+    title: "Boss Joke2",
+    paragraph: `My boss asked me to put a joke on the first slide of the presentation…apparently a picture of my pay slip wasn’t what he was looking for.`,
+  },
+  {
+    type: "Puns",
+    title: "Boss Joke3",
+    paragraph: `My boss asked me to put a joke on the first slide of the presentation…apparently a picture of my pay slip wasn’t what he was looking for.`,
+  },
+  {
+    type: "Puns",
+    title: "Boss Joke4",
+    paragraph: `My boss asked me to put a joke on the first slide of the presentation…apparently a picture of my pay slip wasn’t what he was looking for.`,
+  },
+  {
+    type: "Puns",
+    title: "Boss Joke5",
     paragraph: `My boss asked me to put a joke on the first slide of the presentation…apparently a picture of my pay slip wasn’t what he was looking for.`,
   },
 ];

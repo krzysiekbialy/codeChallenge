@@ -1,5 +1,6 @@
 import * as React from "react";
 import styled from "@emotion/styled";
+import { useState } from "react";
 
 const hand = require("../assets/handDown.svg");
 
@@ -30,17 +31,24 @@ const Icon = styled.div`
   height: 24px;
   width: 22px;
 `;
-const ThumbUpNumber = styled.p``;
+const ThumbUpNumber = styled.p`
+  margin-top: 5px;
+  color: #ff3750;
+  font-size: 12px;
+  text-align: center;
+  font-weight: 600;
+`;
 
 interface ThumbUpProps {}
 
 const ThumbUp: React.FC<ThumbUpProps> = () => {
+  const [unlikeSate, setUnlikeState] = useState(98);
   return (
     <ThumbUpMain>
-      <ThumbDownHolder>
+      <ThumbDownHolder onClick={() => setUnlikeState(unlikeSate + 1)}>
         <Icon></Icon>
       </ThumbDownHolder>
-      <ThumbUpNumber></ThumbUpNumber>
+      <ThumbUpNumber>{unlikeSate}</ThumbUpNumber>
     </ThumbUpMain>
   );
 };

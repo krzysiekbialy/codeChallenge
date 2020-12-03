@@ -139,6 +139,9 @@ const TitleH1 = styled.div`
     font-weight: normal;
     line-height: 50px;
     color: #cfb995;
+    @media (max-width: 320px) {
+      text-align: center;
+    }
   }
 `;
 
@@ -206,6 +209,9 @@ const linksData = [
 const SearchHeader = css`
   @media (max-width: 600px) {
     width: 80%;
+  }
+  @media (max-width: 320px) {
+    width: 100%;
   }
 `;
 export interface SiteNavProps {

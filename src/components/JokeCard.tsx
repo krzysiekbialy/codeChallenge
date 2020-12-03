@@ -75,6 +75,9 @@ const Stats = styled.div`
     text-transform: uppercase;
     cursor: pointer;
   }
+  @media (max-width: 320px) {
+    margin-top: 20px;
+  }
 `;
 
 interface JokeCardProps {

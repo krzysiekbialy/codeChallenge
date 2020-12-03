@@ -25,6 +25,9 @@ const SearchInput = styled.input`
   padding-left: 10px;
   font-size: 16px;
   color: #b2b2b2;
+  @media (max-width: 320px) {
+    font-size: 12px;
+  }
 `;
 
 const SearchAnswer = styled.div`
@@ -44,8 +47,9 @@ const SearchAnswer = styled.div`
   background-color: white;
 `;
 
-const Icon = styled.div`
+const IconSearch = styled.div`
   position: absolute;
+  top: 2px;
   background-image: url(${search});
   background-size: contain;
   background-repeat: no-repeat;
@@ -54,8 +58,8 @@ const Icon = styled.div`
   padding-left: 16px;
   transform: translateX(420px) translateY(55px);
   cursor: pointer;
-  @media (max-width: 600px) {
-    display: none;
+  @media (max-width: 320px) {
+    transform: translateX(480%) translateY(55px);
   }
 `;
 
@@ -123,7 +127,7 @@ const Search: React.FC<SearchProps> = ({ onClickTile, className }) => {
           setInputString(e.target.value);
         }}
       ></SearchInput>
-      <Icon onClick={() => setIsOpen(true)} />
+      <IconSearch onClick={() => setIsOpen(true)} />
 
       {isOpen && (
         <SearchAnswer css={className}>

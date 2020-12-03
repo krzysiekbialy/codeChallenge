@@ -28,7 +28,7 @@ const SideMenu = styled.div`
   }
 `;
 
-const Icon = styled.div`
+const IconBurger = styled.div`
   display: flex;
   align-items: center;
   border-radius: 25px;
@@ -143,9 +143,9 @@ const SiteNav: React.FC<siteNavProps> = ({}) => {
           <ul>
             {linksData.map((item) => {
               return (
-                <Icon>
+                <IconBurger>
                   <p> {item.text}</p>
-                </Icon>
+                </IconBurger>
               );
             })}
           </ul>

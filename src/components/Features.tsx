@@ -52,6 +52,9 @@ const Joke = styled.div`
     flex-direction: column;
     align-items: center;
   }
+  @media (max-width: 320px) {
+    margin: 0;
+  }
 `;
 
 const Span = styled.span`
@@ -78,7 +81,8 @@ const AllJokes = styled.div`
 
 const JokesTitle = styled.p`
   flex: 1;
-  text-align: center;
+  margin-right: 30px;
+  text-align: right;
   color: #d1bb91;
   text-transform: uppercase;
 `;
@@ -108,6 +112,10 @@ const JokeHolderDiv = styled.div`
   padding-top: 16px;
   @media (max-width: 1439px) {
     justify-content: center;
+  }
+  @media (max-width: 320px) {
+    width: 80%;
+    margin: 0 auto;
   }
 `;
 

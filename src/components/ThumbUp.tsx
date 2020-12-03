@@ -1,5 +1,5 @@
-import * as React from "react";
 import styled from "@emotion/styled";
+import React, { useState } from "react";
 
 const hand = require("../assets/handUp.svg");
 
@@ -31,19 +31,31 @@ const Icon = styled.div`
   width: 22px;
 `;
 
-const ThumbUpNumber = styled.p``;
+const ThumbUpNumber = styled.p`
+  margin-top: 5px;
+  color: #68b680;
+  font-size: 12px;
+  text-align: center;
+  font-weight: 600;
+`;
 
 interface ThumbUpProps {
   className?: string;
 }
 
 const ThumbUp: React.FC<ThumbUpProps> = (props) => {
+  const [addPlus, setaddPlus] = useState(328);
   return (
     <ThumbUpMain css={props.className}>
-      <ThumbUpHolder>
+      <ThumbUpHolder
+        onClick={() => {
+          console.log(addPlus);
+          setaddPlus(addPlus + 1);
+        }}
+      >
         <Icon></Icon>
       </ThumbUpHolder>
-      <ThumbUpNumber></ThumbUpNumber>
+      <ThumbUpNumber>{addPlus}</ThumbUpNumber>
     </ThumbUpMain>
   );
 };
