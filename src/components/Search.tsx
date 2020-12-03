@@ -59,7 +59,13 @@ const IconSearch = styled.div`
   transform: translateX(420px) translateY(55px);
   cursor: pointer;
   @media (max-width: 690px) {
-    transform: translateX(35vw) translateY(55px);
+    transform: translateX(60vw) translateY(55px);
+  }
+  @media (max-width: 670px) {
+    transform: translateX(62vw) translateY(55px);
+  }
+  @media (max-width: 640px) {
+    transform: translateX(64vw) translateY(55px);
   }
 `;
 
@@ -127,7 +133,7 @@ const Search: React.FC<SearchProps> = ({ onClickTile, className }) => {
           setInputString(e.target.value);
         }}
       ></SearchInput>
-      <IconSearch onClick={() => setIsOpen(true)} />
+      <IconSearch onClick={() => {}} />
 
       {isOpen && (
         <SearchAnswer css={className}>
