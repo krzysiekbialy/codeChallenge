@@ -43,7 +43,6 @@ const SearchAnswer = styled.div`
   width: 100%;
   max-width: 453px;
   border-radius: 4px;
-  border: 2px solid white;
   background-color: white;
 `;
 
@@ -62,10 +61,10 @@ const IconSearch = styled.div`
     transform: translateX(60vw) translateY(55px);
   }
   @media (max-width: 670px) {
-    transform: translateX(62vw) translateY(55px);
+    transform: translateX(68vw) translateY(55px);
   }
-  @media (max-width: 640px) {
-    transform: translateX(64vw) translateY(55px);
+  @media (max-width: 600px) {
+    transform: translateX(33vw) translateY(55px);
   }
 `;
 
