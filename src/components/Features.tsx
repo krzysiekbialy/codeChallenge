@@ -11,6 +11,11 @@ import TopTenJokes from "./TopTenJokes";
 import Header from "./Header";
 import { css } from "@emotion/core";
 
+export type Joke = {
+  type: string;
+  title: string;
+  paragraph: string;
+};
 const arrow = require("../assets/arrow.svg");
 
 const FeaturesWrapper = styled.section`
@@ -176,6 +181,10 @@ const Features: React.FC<FeaturesProps> = () => {
   const viewList = showAll ? jokeTypeData : jokeTypeData.slice(0, 7);
 
   const viewJokeBoxes = showJokeBoxes ? allJokes : allJokes.slice(0, 5);
+
+  const topTenJokes = allJokes.slice(0, 10) as Joke[];
+
+  console.log(topTenJokes);
   return (
     <>
       <Header onClickTitle={(title) => setCurrentJokeTitle(title)} />
@@ -193,7 +202,7 @@ const Features: React.FC<FeaturesProps> = () => {
               paragraph={currentJoke.paragraph}
               color={bkColor}
             />
-            <TopTenJokes css={TopTen} />
+            <TopTenJokes content={topTenJokes} css={TopTen} />
           </JokeContent>
         </Details>
       ) : (

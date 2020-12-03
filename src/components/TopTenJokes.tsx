@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "@emotion/styled";
-import { topJokes } from "./SimpleData";
+import { Joke } from "./Features";
 
 const TopTenMain = styled.div`
   width: 350px;
@@ -33,6 +33,7 @@ const TopJokesHolder = styled.div`
 `;
 
 interface TopTenProps {
+  content: Joke[];
   className?: string;
   title?: string;
   paragraph1?: string;
@@ -47,8 +48,8 @@ const TopTenJokes: React.FC<TopTenProps> = (props) => {
         <h3>THE TOP 10 JOKES THIS WEEK</h3>
       </Title>
       <TopJokesHolder>
-        {topJokes.map((v, i) => {
-          return <p key={i}>{v.text}</p>;
+        {props.content.map((v, i) => {
+          return <p key={i}>{v.title}</p>;
         })}
       </TopJokesHolder>
     </TopTenMain>
