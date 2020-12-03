@@ -59,7 +59,7 @@ const IconSearch = styled.div`
   transform: translateX(420px) translateY(55px);
   cursor: pointer;
   @media (max-width: 690px) {
-    transform: translateX(430px) translateY(55px);
+    transform: translateX(35vw) translateY(55px);
   }
 `;
 
