@@ -31,12 +31,23 @@ const FeaturesWrapper = styled.section`
 
 const Arrow = styled.div`
   margin-right: 16px;
-  width: 16px;
+
+`;
+
+const rotateDown = css`
+  transform: rotate(90deg);
   background-image: url(${arrow});
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  transform: rotate(90deg);
+`;
+
+const rotateUp = css`
+  transform: rotate(270deg);
+  background-image: url(${arrow});
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 `;
 
 const Joke = styled.div`
@@ -86,7 +97,7 @@ const AllJokes = styled.div`
 
 const JokesTitle = styled.p`
   flex: 1;
-  margin-right: 30px;
+  margin-right: 5px;
   text-align: right;
   color: #d1bb91;
   text-transform: uppercase;
@@ -112,7 +123,7 @@ const Special = styled.div`
 const JokeHolderDiv = styled.div`
   display: flex;
   justify-content: flex-start;
-    margin: 0px -10px 0px -5px;
+  margin: 0px -10px 0px -5px;
   flex-wrap: wrap;
   padding-top: 16px;
   @media (min-width: 1460px) {
@@ -262,8 +273,10 @@ const Features: React.FC<FeaturesProps> = () => {
                   showShowJokeBoxes(!showJokeBoxes);
                 }}
               >
-                VIEW MORE
+                {showJokeBoxes ? "VIEW LESS" : "VIEW MORE"}
               </JokesTitle>
+              {showJokeBoxes ? <Arrow css={rotateUp} /> : <Arrow css={rotateDown} />}
+
               <Arrow />
             </AllJokes>
           </ViewMore>
