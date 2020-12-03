@@ -110,11 +110,14 @@ const Special = styled.div`
 `;
 
 const JokeHolderDiv = styled.div`
-  justify-content: flex-start;
-  margin: 0px -10px 0px -5px;
   display: flex;
+  justify-content: flex-start;
+    margin: 0px -10px 0px -5px;
   flex-wrap: wrap;
   padding-top: 16px;
+  @media (min-width: 1460px) {
+    justify-content: space-around;
+  }
   @media (max-width: 1439px) {
     justify-content: center;
   }
