@@ -75,7 +75,7 @@ const Stats = styled.div`
     text-transform: uppercase;
     cursor: pointer;
   }
-  @media (max-width: 320px) {
+  @media (max-width: 600px) {
     margin-top: 20px;
   }
 `;

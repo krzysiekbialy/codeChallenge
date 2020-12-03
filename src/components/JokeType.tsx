@@ -14,8 +14,9 @@ const JokeHolder = styled.div`
   cursor: pointer;
   @media (max-width: 690px) {
     margin-left: 0;
+    width: 50%;
   }
-  @media (max-width: 320px) {
+  @media (max-width: 600px) {
     width: 80%;
   }
 `;

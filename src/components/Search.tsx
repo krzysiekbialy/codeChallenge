@@ -25,7 +25,7 @@ const SearchInput = styled.input`
   padding-left: 10px;
   font-size: 16px;
   color: #b2b2b2;
-  @media (max-width: 320px) {
+  @media (max-width: 600px) {
     font-size: 12px;
   }
 `;
@@ -58,8 +58,8 @@ const IconSearch = styled.div`
   padding-left: 16px;
   transform: translateX(420px) translateY(55px);
   cursor: pointer;
-  @media (max-width: 320px) {
-    transform: translateX(480%) translateY(55px);
+  @media (max-width: 690px) {
+    transform: translateX(430px) translateY(55px);
   }
 `;
 

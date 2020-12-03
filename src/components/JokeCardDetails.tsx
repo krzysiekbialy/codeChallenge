@@ -29,7 +29,7 @@ const JokeCardMain = styled.div`
     width: 80%;
     margin-right: 0px;
   }
-  @media (max-width: 320px) {
+  @media (max-width: 600px) {
     padding-right: 0px;
   }
 `;
@@ -37,7 +37,7 @@ const JokeCardMain = styled.div`
 const TitleHolder = styled.div`
   display: flex;
   width: 100%;
-  @media (max-width: 320px) {
+  @media (max-width: 600px) {
     flex-direction: column-reverse;
   }
 `;
@@ -69,11 +69,11 @@ const Title = styled.div`
     letter-spacing: normal;
     color: #cfb995;
     padding-top: 13px;
-    @media (max-width: 320px) {
+    @media (max-width: 600px) {
       text-align: center;
     }
   }
-  @media (max-width: 320px) {
+  @media (max-width: 600px) {
     margin-right: 14px;
     height: 100%;
   }
@@ -114,7 +114,7 @@ const Paragraph = styled.div`
     font-size: 15px;
     line-height: 1.47;
   }
-  @media (max-width: 320px) {
+  @media (max-width: 600px) {
     padding-right: 0px;
     padding: 10px;
   }
@@ -125,7 +125,7 @@ const TopHolder = styled.div`
   align-items: center;
   width: 100%;
   justify-content: space-between;
-  @media (max-width: 320px) {
+  @media (max-width: 600px) {
     /* flex-direction: column-reverse; */
   }
 `;
@@ -169,14 +169,14 @@ const Addons = styled.div`
     width: 80%;
     padding-right: 0;
   }
-  @media (max-width: 320px) {
+  @media (max-width: 600px) {
     flex-direction: column;
   }
 `;
 
 const NextPreviusJoke = styled.div`
   display: flex;
-  @media (max-width: 320px) {
+  @media (max-width: 600px) {
     margin-top: 10px;
   }
 `;

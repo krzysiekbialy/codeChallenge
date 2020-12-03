@@ -74,7 +74,7 @@ const HambMenu = styled.svg`
   position: fixed;
   right: 15px;
   top: 0px;
-  fill: white;
+  fill: #cfb995;
   height: 50px;
   width: 50px;
   z-index: 5;
@@ -139,7 +139,7 @@ const TitleH1 = styled.div`
     font-weight: normal;
     line-height: 50px;
     color: #cfb995;
-    @media (max-width: 320px) {
+    @media (max-width: 600px) {
       text-align: center;
     }
   }
@@ -207,10 +207,10 @@ const linksData = [
 ];
 
 const SearchHeader = css`
-  @media (max-width: 600px) {
+  /* @media (max-width: 600px) {
     width: 80%;
-  }
-  @media (max-width: 320px) {
+  } */
+  @media (max-width: 600px) {
     width: 100%;
   }
 `;

@@ -23,8 +23,7 @@ const FeaturesWrapper = styled.section`
   padding-left: 165px;
   padding-right: 165px;
   padding-bottom: 32px;
-
-  @media (max-width: 690px) {
+  @media (max-width: 720px) {
     padding-left: 0px;
     padding-right: 0px;
   }
@@ -56,10 +55,11 @@ const Joke = styled.div`
   @media (max-width: 690px) {
     flex-direction: column;
     align-items: center;
-  }
-  @media (max-width: 320px) {
     margin: 0;
   }
+  /* @media (max-width: 600px) {
+    margin: 0;
+  } */
 `;
 
 const Span = styled.span`
@@ -118,7 +118,7 @@ const JokeHolderDiv = styled.div`
   @media (max-width: 1439px) {
     justify-content: center;
   }
-  @media (max-width: 320px) {
+  @media (max-width: 600px) {
     width: 80%;
     margin: 0 auto;
   }
