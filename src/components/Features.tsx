@@ -31,10 +31,10 @@ const FeaturesWrapper = styled.section`
 
 const Arrow = styled.div`
   margin-right: 16px;
-
 `;
 
 const rotateDown = css`
+  width: 16px;
   transform: rotate(90deg);
   background-image: url(${arrow});
   background-position: center;
@@ -43,6 +43,8 @@ const rotateDown = css`
 `;
 
 const rotateUp = css`
+  width: 16px;
+  margin-left: 16px;
   transform: rotate(270deg);
   background-image: url(${arrow});
   background-position: center;
@@ -97,12 +99,20 @@ const AllJokes = styled.div`
 
 const JokesTitle = styled.p`
   flex: 1;
+  text-align: center;
+  padding-left: 20px;
+  color: #d1bb91;
+  text-transform: uppercase;
+`;
+
+
+const JokesTitleJokes = styled.p`
+  flex: 1;
   margin-right: 5px;
   text-align: right;
   color: #d1bb91;
   text-transform: uppercase;
 `;
-
 const Special = styled.div`
   width: 119px;
   height: 22px;
@@ -239,9 +249,14 @@ const Features: React.FC<FeaturesProps> = () => {
                   setShowAll(!showAll);
                 }}
               >
-                VIEW ALL
+                {showAll ? "VIEW LESS" : "VIEW ALL"}
               </JokesTitle>
-              <Arrow />
+
+              {showAll  ? (
+                <Arrow css={rotateUp} />
+              ) : (
+                <Arrow css={rotateDown} />
+              )}
             </AllJokes>
           </Joke>
           <Span />
@@ -268,14 +283,18 @@ const Features: React.FC<FeaturesProps> = () => {
           </JokeHolderDiv>
           <ViewMore>
             <AllJokes>
-              <JokesTitle
+              <JokesTitleJokes
                 onClick={() => {
                   showShowJokeBoxes(!showJokeBoxes);
                 }}
               >
                 {showJokeBoxes ? "VIEW LESS" : "VIEW MORE"}
-              </JokesTitle>
-              {showJokeBoxes ? <Arrow css={rotateUp} /> : <Arrow css={rotateDown} />}
+              </JokesTitleJokes>
+              {showJokeBoxes ? (
+                <Arrow css={rotateUp} />
+              ) : (
+                <Arrow css={rotateDown} />
+              )}
 
               <Arrow />
             </AllJokes>
